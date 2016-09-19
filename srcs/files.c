@@ -17,7 +17,7 @@
 char	*file_to_string(char *name_file, char *str)
 {
 	char	c[1000];
-	int		i;
+	//int		i;
 	int		file;
 
 	if ((file = open(name_file, O_RDONLY)) == -1)
@@ -25,7 +25,7 @@ char	*file_to_string(char *name_file, char *str)
 		ft_putstr("No such file or directory\n");
 		return (0);
 	}
-	i = 0;
+	//i = 0;
 	while (read(file, c, 999))
 	{
 		str = ft_join(str, c);

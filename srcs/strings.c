@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
+#include "includes/bsq.h"
 
 void	ft_putstr(char *str)
 {
@@ -49,7 +48,7 @@ char	*ft_realloc(char *str, int buff)
 		tmp[i] = str[i];
 		i++;
 	}
-	while (i <= buff + size)
+	while (i <= buff + size) // porque vc coloca zero no final se vc ja sabe o tamanho antes?
 	{
 		tmp[i] = '\0';
 		i++;

@@ -11,7 +11,33 @@
 /* ************************************************************************** */
 
 #include "includes/bsq.h"
-#include <stdlib.h>
+#define BUFFER_SIZE 4096
+
+// This function will read the user input and transform it in an
+// array of characters.
+char	*read_input()
+{
+	char	buf;
+	int		i;
+	char	*input;
+
+	i = 0;	
+	input = (char*)malloc(sizeof(char * BUFFER_SIZE + 1));
+	while (read(0, &buf, 1) == 1)
+	{
+		if (ft_strlen(&buf) == 0)
+		{
+			input[i] = '\0';
+			return (0);
+		}
+		input[i] = buf;
+		i++;
+		if (i == BUFFER_SIZE + 1)
+			input = ft_realloc(input);
+		
+	}
+	return (input);
+}
 
 int		main(int argc, char **argv)
 {
