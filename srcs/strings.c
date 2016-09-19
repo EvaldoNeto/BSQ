@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/bsq.h"
+#include "../includes/bsq.h"
 
 void	ft_putstr(char *str)
 {
@@ -42,7 +42,7 @@ char	*ft_realloc(char *str, int buff)
 
 	size = ft_strlen(str);
 	i = 0;
-	tmp = (char *)malloc(sizeof(char) * (size + buff));
+	tmp = (char *)malloc(sizeof(char) * (size + buff + 1));
 	while (str[i])
 	{
 		tmp[i] = str[i];
@@ -72,4 +72,10 @@ char	*ft_join(char *s1, char *s2)
 	}
 	s1[i + length] = '\0';
 	return (s1);
+}
+
+int		ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (0);
 }

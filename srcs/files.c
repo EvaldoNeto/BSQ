@@ -16,23 +16,24 @@
 
 char	*file_to_string(char *name_file, char *str)
 {
-	char	c[1000];
-	//int		i;
+	char	c;
+	int		i;
 	int		file;
 
-	if ((file = open(name_file, O_RDONLY)) == -1)
+		if ((file = open(name_file, O_RDONLY)) == -1)
 	{
 		ft_putstr("No such file or directory\n");
 		return (0);
 	}
-	//i = 0;
-	while (read(file, c, 999))
+	i = 0;
+	while (read(file, &c, 1))
 	{
-		str = ft_join(str, c);
-		//str[i] = c;
-		//i++;
+		//str = ft_join(str, c);
+		str = ft_realloc(str, 2);
+		str[i] = c;
+		i++;
 	}
-	//str[i] = '\0';
+	str[i] = '\0';
 	close(file);
 	return (str);
 }

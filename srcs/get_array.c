@@ -4,6 +4,8 @@
 *
 */
 
+#include "../includes/bsq.h"
+
 int     **get_array(char *str)
 {
     int     i;
@@ -11,9 +13,13 @@ int     **get_array(char *str)
     int     x;
     int     **result;
     
+    result = (int **)malloc(sizeof(int *) * 10);
     i = 0;
     j = 0;
     x = 0;
+    while (*str != '\n')
+        str++;
+    str++;
     while (str[x] != '\0')
     {
         while (str[x] != '\n')
@@ -25,8 +31,8 @@ int     **get_array(char *str)
             x++;
             j++;
         }
-        x++;
         i++;
+        x++;
         j = 0;
     }
     return (result);

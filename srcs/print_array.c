@@ -4,18 +4,23 @@
 * 
 */
 
-#include "includes/bsq.h"
+#include "../includes/bsq.h"
 
 #include <stdio.h>
 
-void    print_array(char **array)
+void    print_array(int **array)
 {
     int     i;
     
     i = 0;
-    while (array[i] != '\0')
+    while (array[i])
     {
-        prinf("%s\n",array[i]);
+        while (array[i][j])
+        {
+            printf("%d",array[i]);
+            j++;
+        }
+        j = 0;
         i++;
     }
 }

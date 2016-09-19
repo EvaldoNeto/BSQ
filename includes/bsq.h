@@ -24,7 +24,8 @@ void    print_array(char **array);
 int     *square_find(int **user_input, int size_x, int size_y);
 int     **get_array(char *str);
 void    print_result(char **user_input, int pos_x, int pos_y, int size);
+int     ft_putchar(char c);
 
-char	*file_to_string(char *name_file, char *str);
+char	*file_to_string(char *name_file, char *str); // I did put something like this in the main
 
 #endif

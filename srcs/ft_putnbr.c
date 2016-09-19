@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../includes/bsq.h"
 
 void	ft_putnbr(int num)
 {

@@ -4,7 +4,7 @@
 * 
 */
 
-#include "includes/bsq.h"
+#include "../includes/bsq.h"
 
 void    print_result(char **user_input, int pos_x, int pos_y, int size)
 {
@@ -17,7 +17,7 @@ void    print_result(char **user_input, int pos_x, int pos_y, int size)
     {
         while (user_input[i][j] != '\0')
         {
-            if (i =< (pos_x + size) && j <= (pos_y + size))
+            if (i <= (pos_x + size) && j <= (pos_y + size))
                 ft_putchar('X');
             else
                 ft_putchar(user_input[i][j]);
@@ -27,4 +27,5 @@ void    print_result(char **user_input, int pos_x, int pos_y, int size)
         ft_putchar('\n');
         j = 0;
     }
+    ft_putchar('\n');
 }
