@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/bsq.h"
-#include <stdio.h>
 
 void	print_array(int **array, int size_y, int size_x)
 {
@@ -29,6 +28,18 @@ void	print_array(int **array, int size_y, int size_x)
 		}
 		ft_putchar('\n');
 		j = 0;
+		i++;
+	}
+}
+
+void	ft_puterror(char *str)
+{
+	int	i;
+	
+	i = 0;
+	while(str[i] != '\0')
+	{
+		write(2, &str[i], 1);
 		i++;
 	}
 }

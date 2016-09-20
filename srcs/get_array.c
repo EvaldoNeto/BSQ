@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/bsq.h"
+#include <stdio.h>
 
 int		*measure_size(char *str)
 {
@@ -29,32 +30,31 @@ int		*measure_size(char *str)
 	}
 	return (size);
 }
-
-int		**get_array(char *str, int *size, int i, char *c)
+#include <stdio.h>
+int		**get_array(char *str, int *size, int i[2], char *c)
 {
 	int		x;
 	int		**result;
-	int		j;
-
+	
 	result = (int **)malloc(sizeof(int *) * size[0]);
-	j = 0;
 	x = 0;
 	while (*str != '\n')
 		str++;
 	while (str[++x] != '\0')
 	{
-		result[i] = (int *)malloc(sizeof(int) * size[1]);
+		result[i[0]] = (int *)malloc(sizeof(int) * size[1]);
 		while (str[x] != '\n')
 		{
-			if (str[x] == c[0])
-				result[i][j] = 1;
-			else if (str[x] == c[1])
-				result[i][j] = 0;
+			(str[x] == c[0]) ? (result[i[0]][i[1]] = 1) : (result[i[0]][i[1]] = 0);
+			if (str[x] != c[0] && str[x] != c[1])
+				return (0);
 			x++;
-			j++;
+			i[1]++;
 		}
-		i++;
-		j = 0;
+		if (i[1] != size[1])
+			return (0);
+		i[1] = 0;
+		i[0]++;
 	}
 	return (result);
 }

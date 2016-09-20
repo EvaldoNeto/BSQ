@@ -28,6 +28,26 @@ char	*read_input(char *input)
 	return (input);
 }
 
+void	show_result(char *str, int *size, char *letters, int *pos)
+{
+	int **bin_array;
+	int **int_array;
+	int   i[2];
+	
+	i[0] = 0;
+	i[1] = 0;
+	letters = read_header(str);
+	size = measure_size(str);
+	if(!(bin_array = get_array(str, size, i, letters)))
+		{
+			ft_puterror("map error");
+			return ;
+		}
+	int_array = make_square(bin_array, size[0], size[1]);
+	pos = square_find(int_array, size[0], size[1], 0);
+	print_result(int_array, size, pos, letters);			
+}
+
 int		main(int argc, char **argv)
 {
 	(void)argc;
@@ -38,28 +58,25 @@ int		main(int argc, char **argv)
 	char *charact;
 	int	i;
 
-	
+	charact = (char *)malloc(sizeof(char) * 3);
 	str = (char *)malloc(sizeof(char));
 	pos = (int *)malloc(sizeof(int) * 3);
 	size = malloc(sizeof(int) * 2);
 	i = 1;
 	if (argc == 1)
+	  {
 		str = read_input(str);
+		show_result(str, size, charact, pos);
+	  }
 	else if (argc > 1)
 	{
 		while (i < argc)
 		{	
 			str = file_to_string(argv[i], str);
-			size = measure_size(str);
-			charact = read_header(str);
-			pos = square_find(make_square(get_array(str, size, 0, charact),
-										size[0], size[1]), size[0], size[1], 0);
-			print_result(make_square(get_array(str, size, 0, charact), size[0],
-									size[1]), size, pos, charact);
+			show_result(str, size, charact, pos);
 			i++;
 			ft_putstr("\n");
 		}
-		
 	}
 	return (0);
 }

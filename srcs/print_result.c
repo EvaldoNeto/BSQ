@@ -25,7 +25,7 @@ void	print_result(int **matched, int *size, int *pos, char *c)
 		{
 			if ((i >= pos[1] && i < pos[1] + pos[2])
 				&& (j >= pos[0] && j < pos[0] + pos[2]))
-				ft_putchar('x');
+				ft_putchar(c[2]);
 			else if (matched[i][j] == 0)
 				ft_putchar(c[1]);
 			else

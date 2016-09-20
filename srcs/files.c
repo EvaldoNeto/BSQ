@@ -19,7 +19,7 @@ char	*file_to_string(char *name_file, char *str)
 	char	c;
 	int		i;
 	int		file;
-
+	
 	if ((file = open(name_file, O_RDONLY)) == -1)
 	{
 		ft_putstr("No such file or directory\n");
