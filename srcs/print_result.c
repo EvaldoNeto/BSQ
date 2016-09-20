@@ -12,7 +12,7 @@
 
 #include "../includes/bsq.h"
 
-void	print_result(int **matched, int *size, int *pos)
+void	print_result(int **matched, int *size, int *pos, char *c)
 {
 	int		i;
 	int		j;
@@ -27,9 +27,9 @@ void	print_result(int **matched, int *size, int *pos)
 				&& (j >= pos[0] && j < pos[0] + pos[2]))
 				ft_putchar('x');
 			else if (matched[i][j] == 0)
-				ft_putchar('o');
+				ft_putchar(c[1]);
 			else
-				ft_putchar('.');
+				ft_putchar(c[0]);
 			j++;
 		}
 		ft_putchar('\n');

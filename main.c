@@ -65,7 +65,7 @@ int		main(int argc, char **argv)
 	// print final answer positions and size
 	printf("\nposition_x: %d\nposition_y: %d\nbiggest: %d\n\n", pos[0], pos[1], pos[2]);
 	//print final answer
-	print_result(make_square(get_array(str, size, 0, 0, charact), size[0], size[1]), size, pos);
+	print_result(make_square(get_array(str, size, 0, 0, charact), size[0], size[1]), size, pos, charact);
 
 	return (0);
 }

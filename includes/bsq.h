@@ -31,7 +31,7 @@ void			print_array(int **array, int size_x, int size_y);
 int				*square_find(int **user_input, int size_x,
 								int size_y, int biggest);
 int				**get_array(char *str, int *size, int i, int j, char *c);
-void			print_result(int **matched, int *size, int *pos);
+void	print_result(int **matched, int *size, int *pos, char *c);
 void			ft_putchar(char c);
 void			ft_putnbr(int num);
 char			*file_to_string(char *name_file, char *str);
