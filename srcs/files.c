@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 16:02:16 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/20 14:00:04 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/21 01:05:33 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*file_to_string(char *name_file, char *str)
 	char	c;
 	int		i;
 	int		file;
-	
+
 	if ((file = open(name_file, O_RDONLY)) == -1)
 	{
 		ft_putstr("No such file or directory\n");

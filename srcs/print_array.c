@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/20 14:48:43 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/20 15:18:40 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/21 01:11:41 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	print_array(int **array, int size_y, int size_x)
 void	ft_puterror(char *str)
 {
 	int	i;
-	
+
 	i = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
 		write(2, &str[i], 1);
 		i++;
