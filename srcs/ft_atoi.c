@@ -3,7 +3,6 @@
 int	ft_atoi(char *str)
 {
 	int	i;
-	int	negativ;
 	int	number;
 
 	i = 0;
