@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/20 14:53:46 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/20 20:57:38 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/20 21:30:06 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int		**init_square(int **user_input, int **matched, int size_y, int size_x)
 	int i;
 
 	i = -1;
-	matched = (int **)malloc(sizeof(int *) * size_y);
+	matched = (int **)malloc(sizeof(int *) * (size_y + 1));
 	while (i++ < size_y)
-		matched[i] = (int *)malloc(sizeof(int) * size_x);
+		matched[i] = (int *)malloc(sizeof(int) * (size_x + 1));
 	i = -1;
 	while (i++ < size_x)
 		matched[0][i] = user_input[0][i];
@@ -91,7 +91,7 @@ int		*square_find(int **matched, int size_y, int size_x, int biggest)
 			}
 			j--;
 		}
-		j = size_x;
+		j = size_x - 1;
 		i--;
 	}
 	pos[2] = biggest;

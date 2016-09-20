@@ -6,16 +6,12 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 15:06:21 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/20 20:56:09 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/20 21:32:00 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/bsq.h"
-#define BUFFER_SIZE 4096
-#include <stdio.h>
 
-// This function will read the user input and transform it in an
-// array of characters.
 char	*read_input(char *input)
 {
 	char	buf;
@@ -42,41 +38,28 @@ int		main(int argc, char **argv)
 	char *charact;
 	int	i;
 
-	i = 1;
-	pos = (int *)malloc(sizeof(int) * 3);
+	
 	str = (char *)malloc(sizeof(char));
-	size = malloc(sizeof(int) * 2);	
+	pos = (int *)malloc(sizeof(int) * 3);
+	size = malloc(sizeof(int) * 2);
+	i = 1;
 	if (argc == 1)
 		str = read_input(str);
 	else if (argc > 1)
 	{
 		while (i < argc)
-		{
+		{	
 			str = file_to_string(argv[i], str);
 			size = measure_size(str);
 			charact = read_header(str);
 			pos = square_find(make_square(get_array(str, size, 0, 0, charact),
 										size[0], size[1]), size[0], size[1], 0);
 			print_result(make_square(get_array(str, size, 0, 0, charact), size[0],
-													size[1]), size, pos, charact);
+									size[1]), size, pos, charact);
 			i++;
-			ft_putstr("\n\n");
+			ft_putstr("\n");
 		}
 		
 	}
-	/*printf("size_y: %d \nsize_x: %d\n", size[0], size[1]);
-
-	// this function will stock the OBSTACLE and SPACE characters
-
-	// print obsatcle and space signs
-	printf("space: %c \nobstacle: %c\n\n", charact[0], charact[1]);
-	// // print square of ints
-	print_array(get_array(str, size, 0, 0, charact), size[0], size[1]);
-	ft_putchar('\n');
-	// // print square of result
-
-	// print final answer positions and size
-	printf("\nposition_x: %d\nposition_y: %d\nbiggest: %d\n\n", pos[0], pos[1], pos[2]);
-	//print final answer*/
 	return (0);
 }
