@@ -8,18 +8,21 @@
 
 #include <stdio.h>
 
-void    print_array(int **array)
+void    print_array(int **array, int size_y, int size_x)
 {
     int     i;
+    int     j;
     
     i = 0;
-    while (array[i])
+    j = 0;
+    while (i < size_y)
     {
-        while (array[i][j])
+        while (j < size_x)
         {
-            printf("%d",array[i]);
+            ft_putnbr(array[i][j]);
             j++;
         }
+        ft_putchar('\n');
         j = 0;
         i++;
     }

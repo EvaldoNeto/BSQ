@@ -74,8 +74,7 @@ char	*ft_join(char *s1, char *s2)
 	return (s1);
 }
 
-int		ft_putchar(char c)
+void		ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (0);
 }
