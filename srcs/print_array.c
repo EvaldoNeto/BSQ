@@ -13,14 +13,14 @@
 #include "../includes/bsq.h"
 #include <stdio.h>
 
-void	print_array(int **array, int size_x, int size_y)
+void	print_array(int **array, int size_y, int size_x)
 {
 	int i;
 	int j;
 
 	i = 0;
 	j = 0;
-	while (i < size_x)
+	while (i < size_y)
 	{
 		while (j < size_x)
 		{
