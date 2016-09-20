@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 15:06:21 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/20 17:23:39 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/20 20:56:09 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,32 +40,43 @@ int		main(int argc, char **argv)
 	int	*pos;
 	int *size;
 	char *charact;
-	
-    
+	int	i;
+
+	i = 1;
 	pos = (int *)malloc(sizeof(int) * 3);
 	str = (char *)malloc(sizeof(char));
+	size = malloc(sizeof(int) * 2);	
 	if (argc == 1)
 		str = read_input(str);
 	else if (argc > 1)
-		str = file_to_string(argv[1], str);
-	
-	size = malloc(sizeof(int) * 2);
-    size = measure_size(str);
-	printf("size_y: %d \nsize_x: %d\n", size[0], size[1]);
+	{
+		while (i < argc)
+		{
+			str = file_to_string(argv[i], str);
+			size = measure_size(str);
+			charact = read_header(str);
+			pos = square_find(make_square(get_array(str, size, 0, 0, charact),
+										size[0], size[1]), size[0], size[1], 0);
+			print_result(make_square(get_array(str, size, 0, 0, charact), size[0],
+													size[1]), size, pos, charact);
+			i++;
+			ft_putstr("\n\n");
+		}
+		
+	}
+	/*printf("size_y: %d \nsize_x: %d\n", size[0], size[1]);
 
 	// this function will stock the OBSTACLE and SPACE characters
-	charact = read_header(str);
+
 	// print obsatcle and space signs
 	printf("space: %c \nobstacle: %c\n\n", charact[0], charact[1]);
 	// // print square of ints
 	print_array(get_array(str, size, 0, 0, charact), size[0], size[1]);
 	ft_putchar('\n');
 	// // print square of result
-	pos = square_find(make_square(get_array(str, size, 0, 0, charact), size[0], size[1]), size[0], size[1], 0);
+
 	// print final answer positions and size
 	printf("\nposition_x: %d\nposition_y: %d\nbiggest: %d\n\n", pos[0], pos[1], pos[2]);
-	//print final answer
-	print_result(make_square(get_array(str, size, 0, 0, charact), size[0], size[1]), size, pos, charact);
-
+	//print final answer*/
 	return (0);
 }
