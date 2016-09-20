@@ -17,21 +17,20 @@ int		*measure_size(char *str)
 	int *size;
 
 	size = (int *)malloc(sizeof(int) * 2);
-	size[0] = 0;
+	size[0] = ft_atoi(str);
 	size[1] = 0;
-	while (*str)
+	while (*str != '\n')
+		str++;
+	str++;
+	while (*str != '\n')
 	{
-		if (*str == '\n')
-			size[0] += 1;
 		str++;
 		size[1] += 1;
 	}
-	size[0]--;
-	size[1] = (size[1] - size[0]) / size[0];
 	return (size);
 }
 
-int		**get_array(char *str, int *size, int i, int j)
+int		**get_array(char *str, int *size, int i, int j, char *c)
 {
 	int		x;
 	int		**result;
@@ -46,9 +45,9 @@ int		**get_array(char *str, int *size, int i, int j)
 		result[i] = (int *)malloc(sizeof(int) * size[1]);
 		while (str[x] != '\n')
 		{
-			if (str[x] == '.')
+			if (str[x] == c[0])
 				result[i][j] = 1;
-			else if (str[x] == 'o')
+			else if (str[x] == c[1])
 				result[i][j] = 0;
 			x++;
 			j++;

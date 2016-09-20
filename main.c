@@ -39,6 +39,7 @@ int		main(int argc, char **argv)
 	(void)argv;
 	int	*pos;
 	int *size;
+	char *charact;
 	
     
 	pos = (int *)malloc(sizeof(int) * 3);
@@ -50,26 +51,21 @@ int		main(int argc, char **argv)
 	
 	size = malloc(sizeof(int) * 2);
     size = measure_size(str);
- 
-	// // print original
-	// ft_putstr(str);
-	// ft_putchar('\n');
-	printf("%d     %d\n", size[0], size[1]);
+	printf("size_y: %d \nsize_x: %d\n", size[0], size[1]);
+
+	// this function will stock the OBSTACLE and SPACE characters
+	charact = read_header(str);
+	// print obsatcle and space signs
+	printf("space: %c \nobstacle: %c\n\n", charact[0], charact[1]);
 	// // print square of ints
-	print_array(get_array(str, size, 0, 0), size[0], size[1]);
+	print_array(get_array(str, size, 0, 0, charact), size[0], size[1]);
 	ft_putchar('\n');
 	// // print square of result
-	pos = square_find(make_square(get_array(str, size, 0, 0), size[0], size[1]), size[0], size[1], 0);
+	pos = square_find(make_square(get_array(str, size, 0, 0, charact), size[0], size[1]), size[0], size[1], 0);
+	// print final answer positions and size
+	printf("\nposition_x: %d\nposition_y: %d\nbiggest: %d\n\n", pos[0], pos[1], pos[2]);
 	//print final answer
-	//ft_putchar('\n');
-	printf("\n\n\n%d    %d    %d\n\n\n", pos[0], pos[1], pos[2]);
-	//print_result(str, pos[0], pos[1], pos[2], size);
-	print_result(make_square(get_array(str, size, 0, 0), size[0], size[1]), size, pos);
-	
-	ft_putnbr(pos[0]);
-	ft_putchar('\n');
-	ft_putnbr(pos[1]);
-	ft_putchar('\n');
-	
+	print_result(make_square(get_array(str, size, 0, 0, charact), size[0], size[1]), size, pos);
+
 	return (0);
 }
