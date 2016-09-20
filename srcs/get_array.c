@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/20 14:37:28 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/20 15:14:58 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/20 22:08:03 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,18 @@ int		*measure_size(char *str)
 	return (size);
 }
 
-int		**get_array(char *str, int *size, int i, int j, char *c)
+int		**get_array(char *str, int *size, int i, char *c)
 {
 	int		x;
 	int		**result;
+	int		j;
 
 	result = (int **)malloc(sizeof(int *) * size[0]);
+	j = 0;
 	x = 0;
 	while (*str != '\n')
 		str++;
-	str++;
-	while (str[x] != '\0')
+	while (str[++x] != '\0')
 	{
 		result[i] = (int *)malloc(sizeof(int) * size[1]);
 		while (str[x] != '\n')
@@ -53,7 +54,6 @@ int		**get_array(char *str, int *size, int i, int j, char *c)
 			j++;
 		}
 		i++;
-		x++;
 		j = 0;
 	}
 	return (result);
