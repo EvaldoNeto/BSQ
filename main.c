@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 15:06:21 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/20 16:13:54 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/20 16:51:34 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		main(int argc, char **argv)
 	//print final answer
 	//ft_putchar('\n');
 	//print_result(str, pos[0], pos[1], pos[2], size);
-	
+	print_result(make_square(get_array(str, size, 0, 0), size[0], size[1]), size, pos);
 	
 	
 	ft_putnbr(pos[0]);
