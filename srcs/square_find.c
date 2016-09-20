@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/20 14:53:46 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/20 21:30:06 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/20 22:09:44 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int		**make_square(int **user_input, int size_y, int size_x)
 	int		j;
 	int		**matched;
 
+	matched = 0;
 	matched = init_square(user_input, matched, size_y, size_x);
 	j = 0;
 	i = 1;
