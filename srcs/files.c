@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 16:02:16 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/19 18:09:02 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/20 14:00:04 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*file_to_string(char *name_file, char *str)
 	int		i;
 	int		file;
 
-		if ((file = open(name_file, O_RDONLY)) == -1)
+	if ((file = open(name_file, O_RDONLY)) == -1)
 	{
 		ft_putstr("No such file or directory\n");
 		return (0);
@@ -28,7 +28,6 @@ char	*file_to_string(char *name_file, char *str)
 	i = 0;
 	while (read(file, &c, 1))
 	{
-		//str = ft_join(str, c);
 		str = ft_realloc(str, 2);
 		str[i] = c;
 		i++;

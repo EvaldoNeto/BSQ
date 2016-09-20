@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 15:36:30 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/19 18:00:50 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/20 14:02:22 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_realloc(char *str, int buff)
 		tmp[i] = str[i];
 		i++;
 	}
-	while (i <= buff + size) // porque vc coloca zero no final se vc ja sabe o tamanho antes?
+	while (i <= buff + size)
 	{
 		tmp[i] = '\0';
 		i++;
@@ -61,7 +61,7 @@ char	*ft_join(char *s1, char *s2)
 {
 	int	i;
 	int	length;
-  
+
 	length = ft_strlen(s1);
 	s1 = ft_realloc(s1, ft_strlen(s2) + 1);
 	i = 0;
@@ -74,7 +74,7 @@ char	*ft_join(char *s1, char *s2)
 	return (s1);
 }
 
-void		ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
