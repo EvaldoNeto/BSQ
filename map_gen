@@ -8,7 +8,8 @@ die "program x y density" unless (scalar(@ARGV) == 3);
 
 my ($x, $y, $density) = @ARGV;
 
-print "$y.oX\n";
+print "$y";
+print "1oX\n";
 for (my $i = 0; $i < $y; $i++) 
 {
 	for (my $j = 0; $j < $x; $j++)
@@ -19,7 +20,7 @@ for (my $i = 0; $i < $y; $i++)
 		 }
 		 else 
 		 {
-			print ".";
+			print "1";
 		 }
 	 }
 	 print "\n";

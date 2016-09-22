@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 15:36:30 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/20 14:02:22 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/21 19:42:00 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,11 @@ int		ft_strlen(char *str)
 	return (counter);
 }
 
-char	*ft_realloc(char *str, int buff)
+char	*ft_realloc(char *str, int buff, int size)
 {
 	char	*tmp;
 	int		i;
-	int		size;
 
-	size = ft_strlen(str);
 	i = 0;
 	tmp = (char *)malloc(sizeof(char) * (size + buff + 1));
 	while (str[i])
@@ -57,13 +55,13 @@ char	*ft_realloc(char *str, int buff)
 	return (tmp);
 }
 
-char	*ft_join(char *s1, char *s2)
+char	*ft_join(char *s1, char *s2, int size)
 {
 	int	i;
 	int	length;
 
-	length = ft_strlen(s1);
-	s1 = ft_realloc(s1, ft_strlen(s2) + 1);
+	length = size;
+	s1 = ft_realloc(s1, 1024 * 1024 * 5 + 1, size);
 	i = 0;
 	while (s2[i])
 	{

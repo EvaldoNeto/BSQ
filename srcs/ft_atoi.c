@@ -19,6 +19,8 @@ int		ft_atoi(char *str)
 
 	i = 0;
 	number = 0;
+	while (str[i] == ' ' || str[i] == '\t')
+		i++;
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		number *= 10;

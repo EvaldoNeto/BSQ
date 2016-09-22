@@ -6,12 +6,11 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/20 14:53:46 by eneto             #+#    #+#             */
-/*   Updated: 2016/09/20 22:09:44 by eneto            ###   ########.fr       */
+/*   Updated: 2016/09/21 21:47:46 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bsq.h"
-#include <stdio.h>
 
 int		min_xyz(int x, int y, int z)
 {
